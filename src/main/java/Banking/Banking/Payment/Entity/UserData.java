@@ -17,8 +17,15 @@ public class UserData {
 
     @Column  private double amount;
 
-   @Column @Enumerated(EnumType.STRING)
-private accountStatus status;
+
+    @Column @Enumerated(EnumType.STRING)
+private AccountStatus status;
+    public enum AccountStatus {
+        ACTIVE,
+        INACTIVE,
+        SUSPENDED,
+        CLOSED
+    }
 
 
     public int getUserId() {
@@ -52,12 +59,13 @@ private accountStatus status;
         this.amount = amount;
     }
 
-    public accountStatus getStatus() {
+    public AccountStatus getStatus() {
         return status;
     }
 
-    public void setStatus(accountStatus status) {
+    public void setStatus(AccountStatus status) {
         this.status = status;
     }
+
 
 }
