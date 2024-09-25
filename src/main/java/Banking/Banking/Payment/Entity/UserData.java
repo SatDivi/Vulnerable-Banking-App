@@ -17,6 +17,16 @@ public class UserData {
 
     @Column  private double amount;
 
+    public String getUpiId() {
+        return upiId;
+    }
+
+    public void setUpiId(String upiId) {
+        this.upiId = upiId;
+    }
+
+    @Column private String upiId;
+
 
     @Column @Enumerated(EnumType.STRING)
 private AccountStatus status;
